@@ -1,0 +1,42 @@
+<html>
+    <head>
+      <title>Framezee</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1"/>
+      <style>
+        *{
+          box-sizing: border-box;
+        }
+        html, body {
+          padding: 0px;
+          margin: 0px;
+        }
+      </style>
+    <head>
+  <body>
+    <div id="framer"></div>
+    <script type="text/javascript">  
+      function getParam(parameterName) {
+        var result = null,
+          tmp = [];
+          location.search
+            .substr(1)
+            .split("&")
+            .forEach(function (item) {
+              tmp = item.split("=");
+              if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+            });
+        return result;
+      }
+      var locale = getParam('lang') == 'fr' ? 'fr_CA' : 'en_CA';
+      var prod = true;
+      var version = "v1.3.30"
+      var token = '09sWKEfSDFOJ234ihoishfoih23r09us';
+      var script = document.createElement('script');
+      script.src = 'https://cdn' + (prod === true ? '' : '.stage') + '.framezee.cloud/js/' + version + '/framezee.js?mode=custom&currency=CA&el=framer&token=' + token + '&layout_mode=full&locale=' + locale;
+      document.head.appendChild(script);
+    </script>
+  <script  src="bundle.js"></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9247f23f7b10469c","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.1.0","token":"53e10ee586014c0bbebac9aea9656743"}' crossorigin="anonymous"></script>
+</body>
+  </html>
+  
